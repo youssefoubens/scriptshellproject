@@ -1,39 +1,38 @@
-Application Usage Monitor Script
-Overview
-This script is designed to monitor application usage on a Linux system. It tracks the time spent on each application and logs the activity to a specified file. Additionally, it provides functionalities for sorting downloaded files into folders and displaying server utilization information.
+# 📊 Application Monitoring Script (Linux)
 
-Features
-Application Usage Monitoring: Tracks the start and end times of applications, calculating the duration of usage.
-Background Monitoring: Can run in the background to continuously monitor application usage.
-File Sorting: Organizes files in the Downloads directory based on their extensions into respective folders.
-Server Utilization Display: Provides information on currently logged-on users, last logins, disk and memory usage, and system processes.
-How to Use
-Running the Script: Execute the script using ./script_name.sh.
-Options:
--s: Displays server utilization information.
--o: Sorts files in the Downloads directory.
--b: Starts background monitoring of application usage.
--r: Stops background monitoring.
--h: Displays help information.
-Background Monitoring: To start background monitoring, use the -b option. Use -r to stop it.
-File Sorting: Use the -o option to organize files in the Downloads directory.
-Server Utilization Display: Use the -s option to view server utilization information.
-Example Usage
-bash
-Copier le code
-# Display server utilization information
-./script_name.sh -s
+Un script Bash pour surveiller l'utilisation des applications et analyser l'activité système.
 
-# Sort files in Downloads directory
-./script_name.sh -o
+---
 
-# Start background monitoring
-./script_name.sh -b
+## 🌟 Features / Fonctionnalités
 
-# Stop background monitoring
-./script_name.sh -r
-Dependencies
-Bash (Bourne Again SHell)
-ps, grep, date, notify-send, mkdir, mv, awk, df, free, top, w, last
-Notes
-Ensure the script has executable permissions (chmod +x script_name.sh).
+### 🔍 Application Monitoring
+- ✅ Tracks app usage time (start/end timestamps)
+- 📝 Logs activity to `~/app_monitor.log`
+- 🔄 Runs in background (daemon mode)
+
+### 🗂 Automated File Organization
+- 🗃 Sorts Downloads folder by extension (PDF, JPG, ZIP, etc.)
+
+### 📊 Server Analytics
+- 👥 Lists logged-in users
+- 💾 Displays disk/memory usage
+- ⚙️ Shows running processes
+
+---
+
+## 🛠 Usage / Utilisation
+
+### 🚀 Installation
+```bash
+chmod +x monitor_script.sh
+./monitor_script.sh [OPTIONS]
+
+##⚙️ Options
+Option	Description	Commande Exemple
+-s	Show server stats	./monitor_script.sh -s
+-o	Organize Downloads folder	./monitor_script.sh -o
+-b	Start background monitoring	./monitor_script.sh -b
+-r	Stop background monitoring	./monitor_script.sh -r
+-l	View activity log	./monitor_script.sh -l
+-h	Show help	./monitor_script.sh -h
